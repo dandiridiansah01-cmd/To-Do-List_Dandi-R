@@ -145,6 +145,9 @@
                     <option value="🎮 Gaming/Refreshing">🎮 Gaming/Refreshing</option>
                     <option value="🏠 Pekerjaan Rumah">🏠 Pekerjaan Rumah</option>
                     <option value="💬 Ngobrol/Socializing">💬 Ngobrol/Socializing</option>
+                    <option value="✨ Skincare Ganteng">✨ Skincare Ganteng</option>
+                    <option value="💊 Minum Obat">💊 Minum Obat</option>
+                    <option value="📅 Jadwal Temu">📅 Jadwal Temu</option>
                 </select>
 
                 <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-xs px-5 py-1.5 rounded-xl transition duration-200 cursor-pointer shadow-xs active:scale-95">
@@ -327,7 +330,6 @@
             }
         };
 
-        // Memisahkan Emoji (Logo murni) dan teks Keterangan Kategori secara aman tanpa crash
         function parseCategoryData(categoryValue) {
             if (!categoryValue) return { emoji: '📋', text: 'Kegiatan' };
             
@@ -339,7 +341,6 @@
         }
 
         function createItemHTML(activity, isFirst, isLast) {
-            // Mengambil Emoji asli dan teks kategori yang dipilih
             const catData = parseCategoryData(activity.category);
             
             return `
@@ -467,7 +468,7 @@
         window.deleteActivity = (id) => {
             activities = activities.filter(act => act.id !== id);
             saveAndRender();
-            showToast('Aktivitas berhasil deleted.');
+            showToast('Aktivitas berhasil dihapus.');
         };
 
         window.deleteNote = (id) => {
